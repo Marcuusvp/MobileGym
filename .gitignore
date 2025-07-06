@@ -1,0 +1,43 @@
+# Build artefacts
+bin/
+obj/
+out/
+
+# VS Code workspace files
+.vscode/
+
+#env file
+.env
+
+# Rider
+.idea/
+
+# User-specific files
+*.user
+*.suo
+*.userprefs
+*.vspscc
+
+# IIS Express
+/.vs/
+applicationhost.config
+
+# Logs
+*.log
+
+# NuGet
+*.nupkg
+packages/
+
+# Azure Dev Spaces
+.vs
+
+# DotCover
+*.dotCover
+
+# JetBrains
+*.DotSettings.user
+
+# OS
+.DS_Store
+Thumbs.db
