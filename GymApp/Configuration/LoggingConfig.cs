@@ -28,7 +28,7 @@ public static class LoggingConfig
 
         return hostBuilder.UseSerilog();
     }
-        /// <summary>
+    /// <summary>
     /// Método auxiliar para processar a string de headers no formato "k1=v1,k2=v2"
     /// para um dicionário.
     /// </summary>
