@@ -2,7 +2,19 @@ namespace GymApp.Models;
 
 public class Treino
 {
-    public Guid Id { get; }
-    public string Nome { get; } = string.Empty;
-    public List<Exercicio> Exercicios { get; } = new List<Exercicio>();
+    public Guid Id { get; private set; }
+    public string Nome { get; private set; } = string.Empty;
+    public List<Exercicio> Exercicios { get; private set; } = new List<Exercicio>();
+
+    private Treino() { }
+
+    public Treino Criar(string nome, List<Exercicio> exercicios)
+    {
+        return new Treino
+        {
+            Id = new Guid(),
+            Nome = nome,
+            Exercicios = exercicios
+        };
+    }
 }
