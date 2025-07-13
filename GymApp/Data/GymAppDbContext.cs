@@ -9,6 +9,7 @@ public class GymAppDbContext : DbContext
 
     public DbSet<Treino> Treinos => Set<Treino>();
     public DbSet<Exercicio> Exercicios => Set<Exercicio>();
+    public DbSet<ExercicioTreino> ExercicioTreinos => Set<ExercicioTreino>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

@@ -19,8 +19,5 @@ public class TreinoConfiguration : IEntityTypeConfiguration<Treino>
         builder.Property(t => t.Usuario)
             .IsRequired()
             .HasColumnType("varchar(50)");
-
-        builder.HasMany(t => t.Exercicios)
-            .WithMany();
     }
 }

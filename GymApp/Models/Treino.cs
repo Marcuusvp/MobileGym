@@ -4,12 +4,12 @@ public class Treino
 {
     public Guid Id { get; private set; }
     public string Nome { get; private set; } = string.Empty;
-    public List<Exercicio> Exercicios { get; private set; } = new List<Exercicio>();
+    public List<ExercicioTreino> Exercicios { get; private set; } = new();
     public string Usuario { get; private set; } = string.Empty;
 
     private Treino() { }
 
-    public static Treino Criar(string nome, List<Exercicio> exercicios, string usuario)
+    public static Treino Criar(string nome, List<ExercicioTreino> exercicios, string usuario)
     {
         return new Treino
         {

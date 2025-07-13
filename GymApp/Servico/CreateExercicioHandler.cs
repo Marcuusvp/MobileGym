@@ -28,9 +28,6 @@ public class CreateExercicioHandler
 
         var exercicio = Exercicio.Criar(
             nome: request.Nome,
-            series: request.Series,
-            repeticoes: request.Repeticoes,
-            carga: request.Carga,
             foto: imageParams.ImageUrl,
             video: request.Video,
             publicId: imageParams.PublicId

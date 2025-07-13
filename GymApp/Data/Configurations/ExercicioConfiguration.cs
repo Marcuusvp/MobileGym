@@ -15,15 +15,6 @@ public class ExercicioConfiguration : IEntityTypeConfiguration<Exercicio>
             .IsRequired()
             .HasColumnType("varchar(100)");
 
-        builder.Property(e => e.Series)
-            .IsRequired();
-
-        builder.Property(e => e.Repeticoes)
-            .IsRequired();
-
-        builder.Property(e => e.Carga)
-            .IsRequired();
-
         builder.Property(e => e.Foto)
             .HasColumnType("varchar(255)");
 
