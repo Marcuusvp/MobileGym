@@ -9,9 +9,10 @@ public class Exercicio
     public decimal Carga { get; private set; }
     public string Foto { get; private set; } = string.Empty;
     public string Video { get; private set; } = string.Empty;
+    public string ImagePublicId { get; private set; } = string.Empty;
 
-    private Exercicio(){}
-    public Exercicio Criar(string nome, int series, int repeticoes, decimal carga, string foto, string video)
+    private Exercicio() { }
+    public static Exercicio Criar(string nome, int series, int repeticoes, decimal carga, string foto, string video, string publicId)
     {
         return new Exercicio
         {
@@ -21,7 +22,8 @@ public class Exercicio
             Repeticoes = repeticoes,
             Carga = carga,
             Foto = foto,
-            Video = video
+            Video = video,
+            ImagePublicId = publicId
         };
     }
 }
