@@ -1,21 +1,21 @@
-using GymApp.Data;
 using GymApp.Dto;
 using GymApp.Models;
+using GymApp.Repositorio.Interface;
 using GymApp.Servico.Provedores;
 
 namespace GymApp.Servico;
 
 public class CreateExercicioHandler
 {
-    private readonly GymAppDbContext _db;
+    private readonly IExercicioRepository _repo;
     private readonly ILogger<CreateExercicioHandler> _logger;
     private readonly IImageStorageService _imageStorageService;
 
-    public CreateExercicioHandler(IImageStorageService imageStorageService, ILogger<CreateExercicioHandler> logger, GymAppDbContext db)
+    public CreateExercicioHandler(IImageStorageService imageStorageService, ILogger<CreateExercicioHandler> logger, IExercicioRepository repo)
     {
         _imageStorageService = imageStorageService;
         _logger = logger;
-        _db = db;
+        _repo = repo;
     }
 
     public async Task<Exercicio> CriarAsync(CreateExercicioRequest request)
@@ -33,8 +33,9 @@ public class CreateExercicioHandler
             publicId: imageParams.PublicId
         );
 
-        _db.Exercicios.Add(exercicio);
-        await _db.SaveChangesAsync();
+        await _repo.AddAsync(exercicio);
+
+        await _repo.SaveChangesAsync();
 
         _logger.LogInformation("Exercício criado com ID {Id}", exercicio.Id);
 

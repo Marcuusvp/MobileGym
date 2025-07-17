@@ -1,6 +1,8 @@
 using CloudinaryDotNet;
 using GymApp.Configuration;
 using GymApp.Data;
+using GymApp.Repositorio;
+using GymApp.Repositorio.Interface;
 using GymApp.Servico;
 using GymApp.Servico.Provedores;
 using Microsoft.EntityFrameworkCore;
@@ -42,7 +44,10 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 
 builder.Services.AddDbContext<GymAppDbContext>(options =>
     options.UseNpgsql(connectionString));
+builder.Services.AddScoped<IExercicioRepository, ExercicioRepository>();
+builder.Services.AddScoped<ITreinoRepository, TreinoRepository>();
 builder.Services.AddScoped<CreateExercicioHandler>();
+builder.Services.AddScoped<CreateTreinoHandler>();
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

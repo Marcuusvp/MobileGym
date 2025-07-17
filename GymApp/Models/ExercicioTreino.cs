@@ -1,12 +1,16 @@
+using System.Text.Json.Serialization;
+
 namespace GymApp.Models;
 
 public class ExercicioTreino
 {
     public Guid Id { get; private set; }
     public Guid TreinoId { get; private set; }
+    [JsonIgnore]
     public Treino Treino { get; private set; } = null!;
 
     public Guid ExercicioId { get; private set; }
+    [JsonIgnore]
     public Exercicio Exercicio { get; private set; } = null!;
 
     public int Series { get; private set; }
