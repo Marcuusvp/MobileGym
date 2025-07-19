@@ -30,4 +30,10 @@ public class ExercicioTreino
             Carga = carga
         };
     }
+    public void Atualizar(int series, int repeticoes, decimal carga)
+    {
+        Series = series;
+        Repeticoes = repeticoes;
+        Carga = carga;
+    }
 }

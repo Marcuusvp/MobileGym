@@ -63,8 +63,11 @@ builder.Services.AddDbContext<GymAppDbContext>(options =>
 //SERVICES    
 builder.Services.AddScoped<IExercicioRepository, ExercicioRepository>();
 builder.Services.AddScoped<ITreinoRepository, TreinoRepository>();
-builder.Services.AddScoped<CreateExercicioHandler>();
 builder.Services.AddScoped<CreateTreinoHandler>();
+builder.Services.AddScoped<UpdateTreinoHandler>();
+builder.Services.AddScoped<TreinoQueryHandler>();
+builder.Services.AddScoped<DeleteTreinoHandler>();
+builder.Services.AddScoped<CreateExercicioHandler>();
 builder.Services.AddScoped<UpdateExercicioHandler>();
 builder.Services.AddScoped<ExercicioQueryHandler>();
 builder.Services.AddScoped<DeleteExercicioHandler>();
