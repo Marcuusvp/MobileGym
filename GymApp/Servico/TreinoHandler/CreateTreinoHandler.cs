@@ -1,4 +1,3 @@
-using GymApp.Data;
 using GymApp.Dto;
 using GymApp.Models;
 using GymApp.Repositorio.Interface;
