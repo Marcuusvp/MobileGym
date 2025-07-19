@@ -39,12 +39,12 @@ public class TreinoRepository : ITreinoRepository
             .FirstOrDefaultAsync(t => t.Id == id);
     }
 
-    public async Task<(IEnumerable<Treino> Items, int TotalItems)> GetTreinosByUserIdPaginatedAsync(GetTreinosDoUsuarioRequest request)
+    public async Task<(IEnumerable<Treino> Items, int TotalItems)> GetTreinosByUserIdPaginatedAsync(GetTreinosDoUsuarioRequest request, string user)
     {
         var query = _db.Treinos
-            .Where(t => t.Usuario == request.Usuario)
-            .Include(t => t.Exercicios) // Incluir exercícios se necessário no retorno da lista
-                .ThenInclude(et => et.Exercicio) // Incluir detalhes do exercício
+            .Where(t => t.Usuario == user)
+            .Include(t => t.Exercicios)
+                .ThenInclude(et => et.Exercicio)
             .AsQueryable();
 
         var totalItems = await query.CountAsync();
@@ -55,7 +55,7 @@ public class TreinoRepository : ITreinoRepository
             .ToListAsync();
 
         _logger.LogInformation("Busca paginada de treinos para o usuário {UserId}. Página: {PageNumber}, Tamanho: {PageSize}, Total de itens: {TotalItems}",
-            request.Usuario, request.PageNumber, request.PageSize, totalItems);
+            user, request.PageNumber, request.PageSize, totalItems);
 
         return (items, totalItems);
     }

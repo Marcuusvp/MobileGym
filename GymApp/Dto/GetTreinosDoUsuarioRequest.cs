@@ -8,6 +8,4 @@ public class GetTreinosDoUsuarioRequest : PaginationRequest
     public GetTreinosDoUsuarioRequest() : base()
     {
     }
-
-    public string Usuario { get; set; } = string.Empty;
 }

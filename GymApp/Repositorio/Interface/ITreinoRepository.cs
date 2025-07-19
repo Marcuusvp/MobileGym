@@ -11,5 +11,5 @@ public interface ITreinoRepository
     Task<Treino> UpdateAsync(Treino treino);
     Task<bool> DeleteAsync(Treino treino);
     Task UpdateTreinoExerciciosAsync(Treino treino, List<ExercicioTreinoUpdateDto>? exerciciosDto);
-    Task<(IEnumerable<Treino> Items, int TotalItems)> GetTreinosByUserIdPaginatedAsync(GetTreinosDoUsuarioRequest request);
+    Task<(IEnumerable<Treino> Items, int TotalItems)> GetTreinosByUserIdPaginatedAsync(GetTreinosDoUsuarioRequest request, string user);
 }

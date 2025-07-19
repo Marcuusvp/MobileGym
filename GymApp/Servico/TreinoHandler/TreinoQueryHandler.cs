@@ -31,9 +31,9 @@ public class TreinoQueryHandler
         return treino;
     }
 
-    public async Task<PaginationResponse<GetTreinoResponse>> GetTreinosByUserIdPaginatedAsync(GetTreinosDoUsuarioRequest request)
+    public async Task<PaginationResponse<GetTreinoResponse>> GetTreinosByUserIdPaginatedAsync(GetTreinosDoUsuarioRequest request, string user)
     {
-        var (treinos, totalItems) = await _repo.GetTreinosByUserIdPaginatedAsync(request);
+        var (treinos, totalItems) = await _repo.GetTreinosByUserIdPaginatedAsync(request, user);
 
         var treinoDtos = treinos.Select(treino => new GetTreinoResponse
         {

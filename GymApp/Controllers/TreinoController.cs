@@ -117,8 +117,7 @@ public class TreinoController : ControllerBase
     {
         try
         {
-            request.Usuario = userId;
-            var response = await _queryHandler.GetTreinosByUserIdPaginatedAsync(request);
+            var response = await _queryHandler.GetTreinosByUserIdPaginatedAsync(request, userId);
             return Ok(response);
         }
         catch (Exception ex)
