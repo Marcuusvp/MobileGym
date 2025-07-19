@@ -47,11 +47,6 @@ public class ExercicioController : ControllerBase
         [FromRoute] Guid id,
         [FromForm] UpdateExercicioRequest request)
     {
-        if (id != request.Id)
-        {
-            return BadRequest("O ID na URL não corresponde ao ID no corpo da requisição.");
-        }
-
         try
         {
             var exercicioAtualizado = await _updateHandler.AtualizarAsync(id, request);
