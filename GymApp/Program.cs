@@ -10,7 +10,20 @@ using GymApp.Servico.Provedores;
 using GymApp.Servico.TreinoHandler;
 using Microsoft.EntityFrameworkCore;
 
+var envFilePath = Path.Combine(Directory.GetCurrentDirectory(), ".env");
+
+if (File.Exists(envFilePath))
+{
+    Console.WriteLine($"Loading environment variables from .env file at {envFilePath}...");
+    DotNetEnv.Env.Load(envFilePath);
+}
+else
+{
+    Console.WriteLine($"WARNING: .env file not found at {envFilePath}. Ensure it's in the application's working directory. Environment variables might not be loaded as expected.");
+}
+
 var builder = WebApplication.CreateBuilder(args);
+
 //EXCEPTIONS SERVICES
 builder.Services.AddProblemDetails(configure =>
 {
