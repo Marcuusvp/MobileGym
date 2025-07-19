@@ -24,7 +24,6 @@ public class UpdateTreinoHandler
             return null;
         }
 
-        // Atualiza o nome se fornecido
         if (!string.IsNullOrWhiteSpace(request.Nome))
         {
             treino.AtualizarNome(request.Nome);

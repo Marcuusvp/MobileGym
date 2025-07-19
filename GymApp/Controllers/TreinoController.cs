@@ -110,11 +110,10 @@ public class TreinoController : ControllerBase
         }
     }
 
-        // Endpoint para obter treinos de um usuário com paginação
-    [HttpGet("user/{userId}")] // Rota para buscar treinos por ID de usuário
+    [HttpGet("user/{userId}")]
     public async Task<IActionResult> GetTreinosDoUsuario(
         [FromRoute] string userId,
-        [FromQuery] GetTreinosDoUsuarioRequest request) // Recebe parâmetros de paginação
+        [FromQuery] GetTreinosDoUsuarioRequest request)
     {
         try
         {

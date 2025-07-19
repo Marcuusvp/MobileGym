@@ -35,7 +35,6 @@ public class TreinoQueryHandler
     {
         var (treinos, totalItems) = await _repo.GetTreinosByUserIdPaginatedAsync(request);
 
-        // Mapeia os treinos para o DTO de resposta
         var treinoDtos = treinos.Select(treino => new GetTreinoResponse
         {
             Id = treino.Id,

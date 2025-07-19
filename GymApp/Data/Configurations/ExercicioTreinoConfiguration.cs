@@ -13,11 +13,13 @@ public class ExercicioTreinoConfiguration : IEntityTypeConfiguration<ExercicioTr
 
         builder.HasOne(et => et.Treino)
             .WithMany(t => t.Exercicios)
-            .HasForeignKey(et => et.TreinoId);
+            .HasForeignKey(et => et.TreinoId)
+            .OnDelete(DeleteBehavior.Cascade);
 
         builder.HasOne(et => et.Exercicio)
             .WithMany()
-            .HasForeignKey(et => et.ExercicioId);
+            .HasForeignKey(et => et.ExercicioId)
+            .OnDelete(DeleteBehavior.Restrict);
 
         builder.Property(et => et.Carga).IsRequired();
         builder.Property(et => et.Series).IsRequired();

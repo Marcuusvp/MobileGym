@@ -22,9 +22,6 @@ public class DeleteTreinoHandler
             return false;
         }
 
-        // Se o Treino tivesse imagens ou outros recursos externos,
-        // a lógica para deletá-los iria aqui, similar ao Exercicio.
-
         await _repo.DeleteAsync(treino);
         await _repo.SaveChangesAsync();
 

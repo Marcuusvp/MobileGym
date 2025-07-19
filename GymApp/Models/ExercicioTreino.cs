@@ -36,4 +36,11 @@ public class ExercicioTreino
         Repeticoes = repeticoes;
         Carga = carga;
     }
+    public void SetTreinoId(Guid treinoId)
+    {
+        if (TreinoId == Guid.Empty)
+        {
+            TreinoId = treinoId;
+        }
+    }
 }

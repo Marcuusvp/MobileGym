@@ -4,7 +4,7 @@ public class Treino
 {
     public Guid Id { get; private set; }
     public string Nome { get; private set; } = string.Empty;
-    public ICollection<ExercicioTreino> Exercicios { get; private set; }
+    public ICollection<ExercicioTreino> Exercicios { get; private set; } = new List<ExercicioTreino>();
     public string Usuario { get; private set; } = string.Empty;
 
     private Treino() { }
