@@ -3,7 +3,7 @@ using GymApp.Models;
 using GymApp.Repositorio.Interface;
 using GymApp.Servico.Provedores;
 
-namespace GymApp.Servico;
+namespace GymApp.Servico.ExercicioHAndler;
 
 public class CreateExercicioHandler
 {

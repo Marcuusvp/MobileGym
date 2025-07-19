@@ -20,4 +20,24 @@ public class Exercicio
             ImagePublicId = publicId
         };
     }
+
+    public void AtualizarNome(string novoNome)
+    {
+        if (string.IsNullOrEmpty(novoNome))
+        {
+            throw new ArgumentException("O nome não pode ser vazio ou nulo.");
+        }
+        Nome = novoNome;
+    }
+
+    public void AtualizarVideo(string novoVideo)
+    {
+        Video = novoVideo;
+    }
+
+    public void AtualizarFoto(string novaFotoUrl, string novoPublicId)
+    {
+        Foto = novaFotoUrl;
+        ImagePublicId = novoPublicId;
+    }
 }

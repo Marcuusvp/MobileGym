@@ -1,8 +1,7 @@
 using GymApp.Data;
 using GymApp.Dto;
-using GymApp.Servico;
+using GymApp.Servico.TreinoHandler;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 
 namespace GymApp.Controllers;
 
@@ -30,7 +29,7 @@ public class TreinoController : ControllerBase
         catch (Exception ex)
         {
             _logger.LogError(ex, "Erro ao criar treino");
-            return StatusCode(500, "Erro interno ao criar treino");
+            throw;
         }
     }
 
@@ -61,7 +60,7 @@ public class TreinoController : ControllerBase
         catch (Exception ex)
         {
             _logger.LogError(ex, "Erro ao buscar treino");
-            return StatusCode(500, "Erro interno ao buscar treino");
+            throw;
         }
     }
 }

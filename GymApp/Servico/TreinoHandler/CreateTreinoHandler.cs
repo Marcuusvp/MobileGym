@@ -3,7 +3,7 @@ using GymApp.Dto;
 using GymApp.Models;
 using GymApp.Repositorio.Interface;
 
-namespace GymApp.Servico;
+namespace GymApp.Servico.TreinoHandler;
 
 public class CreateTreinoHandler
 {
